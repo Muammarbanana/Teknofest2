@@ -1,6 +1,7 @@
 package com.example.ahmadmuammarfanani.teknofest2;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ public class FireBaseClient {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-
+                getupdates(dataSnapshot);
             }
 
             @Override
@@ -66,13 +67,18 @@ public class FireBaseClient {
 
     public void getupdates(DataSnapshot dataSnapshot){
         produks.clear();
-
+        DataSnapshot dss = dataSnapshot;
         for(DataSnapshot ds:dataSnapshot.getChildren()){
             Produk p = new Produk();
-            p.setNama(ds.getValue(Produk.class).getNama());
-            p.setHarga(ds.getValue(Produk.class).getHarga());
-            p.setUrl(ds.getValue(Produk.class).getUrl());
-            produks.add(p);
+            p.setNama(ds.child("Nama").getValue(String.class));
+            p.setHarga(ds.child("Harga").getValue(String.class));
+            p.setUrl(ds.child("IMGUrl").child("APriority").getValue(String.class));
+            p.setUrl2(dss.child("Owner").getValue(String.class));
+            p.setJam(dss.child("Waktu").getValue(String.class));
+            p.setLokasi(dss.child("Lokasi").getValue(String.class));
+            if(p.getNama()!=null){
+                produks.add(p);
+            }
         }
         if(produks.size()>0){
             customAdapter = new CustomAdapter(c,produks);

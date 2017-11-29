@@ -1,10 +1,12 @@
 package com.example.ahmadmuammarfanani.teknofest2;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -27,6 +29,7 @@ public class List_teknofeset extends AppCompatActivity {
     private String db_url = "https://teknofest2.firebaseio.com/";
     private ListView listView;
     private FireBaseClient fireBaseClient;
+    private CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

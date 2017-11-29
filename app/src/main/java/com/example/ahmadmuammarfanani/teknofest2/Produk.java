@@ -9,6 +9,9 @@ public class Produk {
     private String Nama;
     private String Harga;
     private String Url;
+    private String Url2;
+    private String Lokasi;
+    private String Jam;
 
     public String getNama() {
         return Nama;
@@ -32,5 +35,29 @@ public class Produk {
 
     public void setUrl(String Url) {
         this.Url = Url;
+    }
+
+    public String getUrl2() {
+        return Url2;
+    }
+
+    public void setUrl2(String Url2) {
+        this.Url2 = Url2;
+    }
+
+    public String getLokasi() {
+        return Lokasi;
+    }
+
+    public void setLokasi(String Lokasi) {
+        this.Lokasi = Lokasi;
+    }
+
+    public String getJam() {
+        return Jam;
+    }
+
+    public void setJam(String Jam) {
+        this.Jam = Jam;
     }
 }
