@@ -1,11 +1,13 @@
-package com.example.ahmadmuammarfanani.teknofest2;
+package com.example.ahmadmuammarfanani.teknofest2.tambahan;
 
 import android.content.Intent;
-import android.support.v7.view.menu.MenuView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.ahmadmuammarfanani.teknofest2.R;
+import com.example.ahmadmuammarfanani.teknofest2.Tabbed;
 
 /**
  * Created by Ahmad Muammar Fanani on 11/27/2017.
@@ -26,7 +28,7 @@ public class MyHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemView.getContext().startActivity(new Intent(itemView.getContext(),Contohaja.class));
+                itemView.getContext().startActivity(new Intent(itemView.getContext(),Tabbed.class));
                 Log.d("Tesaja", "onClick: " + nama.getText().toString());
             }
         });

@@ -1,11 +1,12 @@
-package com.example.ahmadmuammarfanani.teknofest2;
+package com.example.ahmadmuammarfanani.teknofest2.tambahan;
 
+import android.app.Activity;
 import android.content.Context;
-import android.provider.ContactsContract;
-import android.widget.ListAdapter;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.ahmadmuammarfanani.teknofest2.Tab2_Minuman;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -13,7 +14,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Ahmad Muammar Fanani on 11/27/2017.
@@ -32,7 +32,6 @@ public class FireBaseClient {
         this.db_url = db_url;
         this.listView = listView;
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mRef = FirebaseDatabase.getInstance().getReferenceFromUrl(db_url);
     }
 

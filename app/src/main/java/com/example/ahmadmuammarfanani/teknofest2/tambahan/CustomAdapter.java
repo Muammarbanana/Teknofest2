@@ -1,10 +1,12 @@
-package com.example.ahmadmuammarfanani.teknofest2;
+package com.example.ahmadmuammarfanani.teknofest2.tambahan;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import com.example.ahmadmuammarfanani.teknofest2.R;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,9 @@
-package com.example.ahmadmuammarfanani.teknofest2;
+package com.example.ahmadmuammarfanani.teknofest2.tambahan;
 
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.example.ahmadmuammarfanani.teknofest2.R;
 import com.squareup.picasso.Picasso;
 
 /**
