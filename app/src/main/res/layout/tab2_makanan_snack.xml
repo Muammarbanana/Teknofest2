@@ -10,5 +10,5 @@
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
-        android:id="@+id/listView_lainnya"/>
+        android:id="@+id/listView_makanan_snack"/>
 </android.support.constraint.ConstraintLayout>

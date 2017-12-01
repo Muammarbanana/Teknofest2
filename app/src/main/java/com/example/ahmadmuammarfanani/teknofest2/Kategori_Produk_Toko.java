@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
+import com.example.ahmadmuammarfanani.teknofest2.kategori_produk_toko.Tab1_Makanan;
+import com.example.ahmadmuammarfanani.teknofest2.kategori_produk_toko.Tab2_Minuman;
+import com.example.ahmadmuammarfanani.teknofest2.kategori_produk_toko.Tab3_Lain;
 import com.example.ahmadmuammarfanani.teknofest2.tambahan.SectionPageAdapter;
 
-public class Tabbed extends AppCompatActivity {
+public class Kategori_Produk_Toko extends AppCompatActivity {
 
-    private static final String TAG = "Tabbed";
+    private static final String TAG = "Kategori_Produk_Toko";
     private SectionPageAdapter mSectionPageAdapter;
     private ViewPager mViewPager;
 

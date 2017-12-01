@@ -12,6 +12,15 @@ public class Produk {
     private String Url2;
     private String Lokasi;
     private String Jam;
+    private String Jenis;
+
+    public String getJenis() {
+        return Jenis;
+    }
+
+    public void setJenis(String jenis) {
+        Jenis = jenis;
+    }
 
     public String getNama() {
         return Nama;

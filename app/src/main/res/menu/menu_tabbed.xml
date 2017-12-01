@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.ahmadmuammarfanani.teknofest2.Tabbed">
+    tools:context="com.example.ahmadmuammarfanani.teknofest2.Kategori_Produk_Toko">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

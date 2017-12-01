@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/l1"
+    android:layout_width="144dp"
+    android:layout_height="168dp"
+    android:orientation="vertical"
+    android:layout_marginRight="35dp"
+    android:background="#FFFFFF"
+    android:clickable="true"
+    android:onClick="opendetail"
+    android:layout_margin="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/gambarmakanan"
+        android:layout_width="144dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/line"
+         />
+
+    <TextView
+        android:id="@+id/namamakanan"
+        android:tag="namaproduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Nama Mkn"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10dp" />
+    <TextView
+        android:id="@+id/hargamakanan"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp. 2000,-"
+        android:textSize="8dp"
+        android:textColor="#00E676"
+        />
+</LinearLayout>
