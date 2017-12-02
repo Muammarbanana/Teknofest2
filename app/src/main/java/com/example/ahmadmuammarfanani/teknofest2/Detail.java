@@ -162,7 +162,7 @@ public class Detail extends AppCompatActivity {
                         DataSnapshot Datas = dataSnapshot.child(NamaProduk);
 
                         Nama = Datas.child("Nama").getValue(String.class);
-                        harga = Datas.child("Harga").getValue().toString();
+                        harga = Datas.child("Harga").getValue(String.class);
                         deskripsi= Datas.child("Deskripsi").getValue(String.class);
 
 
@@ -184,13 +184,12 @@ public class Detail extends AppCompatActivity {
                 Product = new ArrayList<>();
 
                 for(DataSnapshot DS : dataSnapshot.getChildren()){
-                    if(DS.child("Nama").getValue() != null){
-                        if(DS.child("Nama").getValue() != Nama){
-                            Product.add(DS);
+                        if(DS.child("Nama").getValue() != null){
+                            if(DS.child("Nama").getValue() != Nama){
+                                Product.add(DS);
+                            }
                         }
                     }
-
-                }
 
                 int i = Product.size();
                 Collections.shuffle(Product);
@@ -230,10 +229,13 @@ public class Detail extends AppCompatActivity {
 
     public void opentoko(View view){
         Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
-        view.setBackground(Drawable.createFromPath("#FFFFFF"));
+        //view.setBackground(Drawable.createFromPath("#FFFFFF"));
 
         setsharedpref(NamaToko , NamaProduk);
         Intent intent = new Intent(Detail.this , Profiletoko.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("NamaToko",NamaToko);
+        intent.putExtras(bundle);
         startActivity(intent);
 
     }

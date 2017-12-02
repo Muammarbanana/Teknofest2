@@ -173,7 +173,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_toLeftOf="@id/seemore"
-                        android:text="Menu Lainnya"
+                        android:text="Lainnya"
                         android:textColor="#687074"
                         android:textSize="16dp"
                         android:textStyle="bold"

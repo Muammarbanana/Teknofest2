@@ -20,7 +20,7 @@ import com.example.ahmadmuammarfanani.teknofest2.R;
 
 public class MyHolder {
 
-    TextView nama,harga,lokasi,jam;
+    TextView nama,harga,lokasi,jam, namatoko;
     ImageView gambar,foto;
 
     public MyHolder(final View itemView) {
@@ -30,8 +30,9 @@ public class MyHolder {
         lokasi = itemView.findViewById(R.id.lokasi);
         jam = itemView.findViewById(R.id.jam);
         foto = itemView.findViewById(R.id.foto);
-
+        namatoko = itemView.findViewById(R.id.namatoko);
     }
+
 
 
 }

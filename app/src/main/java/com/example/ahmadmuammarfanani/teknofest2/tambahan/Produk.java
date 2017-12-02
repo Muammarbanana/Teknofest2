@@ -13,6 +13,15 @@ public class Produk {
     private String Lokasi;
     private String Jam;
     private String Jenis;
+    private String NamaToko;
+
+    public String getNamaToko() {
+        return NamaToko;
+    }
+
+    public void setNamaToko(String namaToko) {
+        NamaToko = namaToko;
+    }
 
     public String getJenis() {
         return Jenis;

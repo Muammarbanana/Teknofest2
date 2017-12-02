@@ -52,6 +52,7 @@ public class CustomAdapter extends BaseAdapter{
         holder.harga.setText(produks.get(i).getHarga());
         holder.lokasi.setText(produks.get(i).getLokasi());
         holder.jam.setText(produks.get(i).getJam());
+        holder.namatoko.setText(produks.get(i).getNamaToko());
         PicassoClient.downloading(c,produks.get(i).getUrl(),holder.gambar);
         PicassoClient.downloading(c,produks.get(i).getUrl2(),holder.foto);
 

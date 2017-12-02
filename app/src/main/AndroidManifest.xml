@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".List_teknofeset">
+        <activity
+            android:name=".Hompage2"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,23 +28,23 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".Homepage"
+            android:name=".List_teknofeset"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-        android:name=".Kategori_Produk_Toko"
-        android:label="@string/title_activity_tabbed"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:name=".Kategori_Produk_Toko"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-        android:name=".Kategori_Makanan"
-        android:label="@string/title_activity_tabbed"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Kategori_Makanan"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-        android:name=".Detail"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Detail"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Profiletoko"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Homepage"></activity>
     </application>
 
 </manifest>

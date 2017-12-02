@@ -1,6 +1,7 @@
 package com.example.ahmadmuammarfanani.teknofest2.kategori_produk_toko;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -20,40 +22,26 @@ import java.util.ArrayList;
 
 public class FireBaseClient_Lainnya {
     Context c;
-    String db_url;
+    String db_url,NamaToko;
     ListView listView;
     DatabaseReference mRef;
     ArrayList<Produk> produks = new ArrayList<>();
     CustomAdapter customAdapter;
 
-    public FireBaseClient_Lainnya(Context c, String db_url, ListView listView) {
+    public FireBaseClient_Lainnya(Context c, String db_url, ListView listView, String NamaToko) {
         this.c = c;
         this.db_url = db_url;
         this.listView = listView;
+        this.NamaToko = NamaToko;
 
         mRef = FirebaseDatabase.getInstance().getReferenceFromUrl(db_url);
     }
 
     public void refreshdata(){
-        mRef.addChildEventListener(new ChildEventListener() {
+        mRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 getupdates(dataSnapshot);
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                getupdates(dataSnapshot);
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-                getupdates(dataSnapshot);
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
@@ -65,19 +53,25 @@ public class FireBaseClient_Lainnya {
 
     public void getupdates(DataSnapshot dataSnapshot){
         produks.clear();
-        DataSnapshot dss = dataSnapshot;
-        for(DataSnapshot ds:dataSnapshot.getChildren()){
-            Produk p = new Produk();
-            p.setNama(ds.child("Nama").getValue(String.class));
-            p.setHarga(ds.child("Harga").getValue(String.class));
-            p.setUrl(ds.child("IMGUrl").child("APriority").getValue(String.class));
-            p.setUrl2(dss.child("Owner").getValue(String.class));
-            p.setJam(dss.child("Waktu").getValue(String.class));
-            p.setLokasi(dss.child("Lokasi").getValue(String.class));
-            p.setJenis(ds.child("Jenis").getValue(String.class));
-            if(p.getNama()!=null){
-                if(p.getJenis().equals("Lainnya")){
-                    produks.add(p);
+        for(DataSnapshot ds2:dataSnapshot.getChildren()) {
+            for (DataSnapshot ds : ds2.getChildren()) {
+                Produk p = new Produk();
+                p.setNama(ds.child("Nama").getValue(String.class));
+                p.setHarga(ds.child("Harga").getValue(String.class));
+                p.setHarga("Rp. "+p.getHarga()+",-");
+                p.setUrl(ds.child("IMGUrl").child("APriority").getValue(String.class));
+                p.setUrl2(ds2.child("Owner").getValue(String.class));
+                p.setJam(ds2.child("Waktu").getValue(String.class));
+                p.setLokasi(ds2.child("Lokasi").getValue(String.class));
+                p.setNamaToko(ds2.child("Nama").getValue(String.class));
+                p.setJenis(ds.child("Jenis").getValue(String.class));
+                Log.d("TAG","Message "+p.getJenis());
+                if (p.getNama() != null ) {
+                    if(p.getNamaToko().equals(NamaToko)){
+                        if(p.getJenis().equals("Lainnya")) {
+                            produks.add(p);
+                        }
+                    }
                 }
             }
         }

@@ -188,6 +188,9 @@ public class Profiletoko extends AppCompatActivity {
     public void seemore(View view){
         setsharedpref(NamaToko);
         Intent intent = new Intent(Profiletoko.this , Kategori_Produk_Toko.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("NamaToko",NamaToko);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
