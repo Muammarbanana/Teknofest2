@@ -79,7 +79,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_toLeftOf="@id/pemilik"
                         android:text="Rp. 2000 ,-"
-                        android:textColor="#39CD7B"
+                        android:textColor="#38D0A4"
                         android:textSize="16dp"
                         tools:ignore="InvalidId" />
 
@@ -296,7 +296,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#00E676"
+        android:background="#38D0A4"
         android:drawableTint="#39CD7B"
         android:hint="#FFFFFF"
 

@@ -21,7 +21,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/iklanatas2"
                 android:layout_width = "match_parent"
-                android:layout_height = "160dp"
+                android:layout_height = "213dp"
                 >
             </android.support.v4.view.ViewPager>
 
@@ -102,13 +102,15 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="16dp"
+                 >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Makanan"
                         android:textColor="#687074"
+
                         android:textSize="20dp"
                         android:textStyle="bold"
 
@@ -116,6 +118,7 @@
 
                     <TextView
                         android:layout_marginRight="16dp"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -128,16 +131,21 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/listmakanantoko2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="16dp"
+
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:text="Minuman"
                         android:textColor="#687074"
                         android:textSize="20dp"
@@ -161,11 +169,14 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/listminumantoko2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    />
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="16dp"
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -190,6 +201,8 @@
 
                 <!-- Buat Recycler view -->
                 <android.support.v7.widget.RecyclerView
+
+
                     android:id="@+id/listlaintoko2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
