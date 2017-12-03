@@ -43,6 +43,7 @@ import com.squareup.picasso.Target;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.security.Permission;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -84,11 +85,7 @@ public class Detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        dialog = new ProgressDialog(Detail.this);
-        dialog.setMessage("Loading...");
-        dialog.setCancelable(false);
-        dialog.setInverseBackgroundForced(false);
-        dialog.show();
+
 
         SharedPreferences DataToko = this.getSharedPreferences("DataToko" , Context.MODE_PRIVATE);
 
@@ -198,7 +195,7 @@ public class Detail extends AppCompatActivity {
                 list.setLayoutManager(new LinearLayoutManager(Detail.this , LinearLayoutManager.HORIZONTAL , false));
                 list.setAdapter(new HorizontalAdapter(Product , Detail.this));
 
-                dialog.dismiss();
+               // dialog.dismiss();
             }
 
 
@@ -217,7 +214,7 @@ public class Detail extends AppCompatActivity {
 
 
     public void opendetail(View view){
-        Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
         TextView textView = view.findViewWithTag("namaproduk");
         String produk = (String)textView.getText();
         setsharedpref(NamaToko , produk);
@@ -228,7 +225,7 @@ public class Detail extends AppCompatActivity {
     }
 
     public void opentoko(View view){
-        Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
         //view.setBackground(Drawable.createFromPath("#FFFFFF"));
 
         setsharedpref(NamaToko , NamaProduk);
@@ -333,15 +330,18 @@ public class Detail extends AppCompatActivity {
             callIntent.setData(Uri.parse(nomer));
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
+                Log.d("TAG", "call: ");
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
                 //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
                 //                                          int[] grantResults)
                 // to handle the case where the user grants the permission. See the documentation
                 // for ActivityCompat#requestPermissions for more details.
+                startActivity(callIntent);
                 return;
             }
             startActivity(callIntent);
+
         }
     }
 

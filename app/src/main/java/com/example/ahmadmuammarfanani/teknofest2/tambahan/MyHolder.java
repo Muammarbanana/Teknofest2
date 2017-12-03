@@ -1,17 +1,9 @@
 package com.example.ahmadmuammarfanani.teknofest2.tambahan;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ahmadmuammarfanani.teknofest2.Detail;
-import com.example.ahmadmuammarfanani.teknofest2.Homepage;
-import com.example.ahmadmuammarfanani.teknofest2.Kategori_Makanan;
-import com.example.ahmadmuammarfanani.teknofest2.Kategori_Produk_Toko;
 import com.example.ahmadmuammarfanani.teknofest2.R;
 
 /**

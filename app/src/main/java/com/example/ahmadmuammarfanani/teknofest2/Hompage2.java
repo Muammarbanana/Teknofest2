@@ -57,11 +57,7 @@ public class Hompage2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hompage2);
 
-        dialog = new ProgressDialog(Hompage2.this);
-        dialog.setMessage("Loading...");
-        dialog.setCancelable(false);
-        dialog.setInverseBackgroundForced(false);
-        dialog.show();
+
 
         InsertImg();
 
@@ -82,16 +78,29 @@ public class Hompage2 extends AppCompatActivity {
                         if (DS2.child("Nama").getValue() != null) {
                             if (DS2.child("Jenis").getValue(String.class).equals("Makanan")) {
                                 ProdukMakan.add(DS2);
-                                //Log.d("TAG", "opendetail: "+DS2.child("Nama").getValue(String.class));
-                            } else if (DS2.child("Jenis").getValue(String.class).equals("Minuman")) {
+                            }
+                        }
+                    }
+                }
+                for (DataSnapshot DS : dataSnapshot.getChildren()) {
+                    for (DataSnapshot DS2 : DS.getChildren()) {
+                        if (DS2.child("Nama").getValue() != null) {
+                            if (DS2.child("Jenis").getValue(String.class).equals("Minuman")) {
                                 ProdukMinum.add(DS2);
-                            } else {
+                            }
+                        }
+                    }
+                }
+                for (DataSnapshot DS : dataSnapshot.getChildren()) {
+                    for (DataSnapshot DS2 : DS.getChildren()) {
+                        if (DS2.child("Nama").getValue() != null) {
+                            if (DS2.child("Jenis").getValue(String.class).equals("Lainnya")) {
                                 ProdukLain.add(DS2);
                             }
                         }
                     }
                 }
-                dialog.dismiss();
+                //dialog.dismiss();
             }
 
             @Override
@@ -193,7 +202,7 @@ public class Hompage2 extends AppCompatActivity {
 
     public void opendetail2(View view){
 
-        Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
         TextView textView = view.findViewWithTag("namaproduk");
 
         String produk =textView.getText().toString();

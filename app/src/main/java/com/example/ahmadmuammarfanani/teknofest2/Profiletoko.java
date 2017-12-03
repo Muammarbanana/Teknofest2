@@ -90,7 +90,7 @@ public class Profiletoko extends AppCompatActivity {
 
     //membuka activity detail
     public void opendetail(View view){
-        Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this , "Wait For Open" , Toast.LENGTH_SHORT).show();
         TextView textView = view.findViewWithTag("namaproduk");
         String produk = (String)textView.getText();
         setsharedpref( NamaToko , produk);
@@ -202,6 +202,7 @@ public class Profiletoko extends AppCompatActivity {
 
 
     public void lineadd(View view) {
+
         String sendText = IDLine;
         Intent intent = null;
         if((!IDLine.equals("")) || (IDLine != null)){
